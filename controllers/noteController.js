@@ -12,6 +12,7 @@ const getAllNotes = async (req, res) => {
 };
 
 const createNote = async (req, res) => {
+  console.log(req.body);
   try {
     const noteData = req.body;
     const result = await Note.create(noteData);
