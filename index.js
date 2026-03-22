@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./db/connection");
 const notesRouter = require("./routes/noteRoutes");
+const authMiddleware = require("../middleware/middleware");
 
 dotenv.config();
 
@@ -14,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 connectDB().then(() => startServer());
-
+router.use(authMiddleware);
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
