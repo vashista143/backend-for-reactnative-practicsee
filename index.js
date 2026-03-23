@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./db/connection");
 const notesRouter = require("./routes/noteRoutes");
-const authMiddleware = require("../middleware/middleware");
+const authMiddleware = require("./middleware/middleware");
 
 dotenv.config();
 
