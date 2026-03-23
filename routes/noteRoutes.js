@@ -9,7 +9,7 @@ const {
 } = require("../controllers/noteController");
 
 const router = express.Router();
-
+router.use(authMiddleware);
 router.post("/signup", signup);
 router.post("/signin", signin);
 router.post("/notes", createNote);

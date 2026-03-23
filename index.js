@@ -15,7 +15,6 @@ app.use(cors());
 app.use(express.json());
 
 connectDB().then(() => startServer());
-router.use(authMiddleware);
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
