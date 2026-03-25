@@ -81,8 +81,10 @@ const editNote = async (req, res) => {
 };
 
 const signup = async (req, res) => {
+  console.log("signup hit")
   try {
     const { name, email, password } = req.body;
+    console.log(req.body)
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ error: "User already exists" });
